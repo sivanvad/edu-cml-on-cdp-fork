@@ -11,7 +11,8 @@ setup_environment() {
 	export HIVE_EXT="`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hive/conf/hive-site.xml | head -1`/warehouse/tablespace/external/hive"
 	export PRINCIPAL=`klist | sed -nr 's/^Default principal: (.*)\/.+$/\1/p' | head -1`
 	export DATALAKE=`sed -nr 's/^.*https:\/\/(.*)-idbroker.*$/\1/p' /etc/hadoop/conf/core-site.xml | head -1`
-	export S3_DATA=https://cml-training.s3.amazonaws.com
+	#export S3_DATA=https://cml-training.s3.amazonaws.com
+        export S3_DATA=https://cloudera-training-materials.s3-us-west-1.amazonaws.com/CDSW
 
 	echo "S3_ROOT =  $S3_ROOT"
 	echo "HIVE_EXT = $HIVE_EXT"
